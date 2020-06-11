@@ -1,0 +1,107 @@
+<?php
+/* menu.phtml */
+if ( count($superior) ) {
+    echo "<ul class='nav navbar-nav'>", PHP_EOL;
+    for($i = 0; $i < count($superior); $i++ ) {
+        if ( $this->_acl->accesoMenus($superior[$i]['permiso']) ) {
+            if ( isset($superior[$i]['submenus']) ) {
+                if ( $superior[$i]['id'] == $id ) {
+                    echo "<li class='nav-item active'>", PHP_EOL; 
+                } else {
+                    echo "<li class='nav-item'>", PHP_EOL;
+                }
+				$icono = $superior[$i]['icono'] ?? '';
+                echo "<a class='dropdown-toggle' id='{$superior[$i]['id']}' href='#' data-toggle='dropdown' title='{$superior[$i]['titulo']}'>{$icono} <span class='d-none d-sm-none d-md-inline'>{$superior[$i]['titulo']}</span></a>
+                <ul class='dropdown-menu' aria-labelledby='{$superior[$i]['id']}'>", PHP_EOL;
+                foreach ( $superior[$i]['submenus'] as $titulo => $enlace ) {
+                    echo "<li><a class='dropdown-item' href='{$enlace}'>{$titulo}</a></li>", PHP_EOL;
+                }
+                echo "</ul>", PHP_EOL;
+            } else {
+                if ( $superior[$i]['id'] == $id ) {
+                    echo "<li class='nav-item active'>", PHP_EOL;
+                } else 
+                    echo "<li class='nav-item'>", PHP_EOL;
+				$icono = $superior[$i]['icono'] ?? '';
+                echo "<a class='' href='{$superior[$i]['enlace']}' title='{$superior[$i]['titulo']}'>{$icono} <span class='d-none d-sm-none d-md-inline'>{$superior[$i]['titulo']}</span></a>", PHP_EOL;
+            }
+            echo "</li>", PHP_EOL;
+        }
+    }
+    echo "<li class='dropdown user user-menu' id='usuarios'>
+				<a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+					<img src='[URL_IMAGEN_PERFIL]' class='user-image' alt='User Image'>
+					<span class='d-none d-sm-inline'>[USER_ALIAS]</span>
+				</a>
+				<ul class='dropdown-menu dropdown-menu-lg dropdown-menu-right'>
+					<li class='user-header'>
+                        <img src='[URL_IMAGEN_PERFIL]' class='img-circle' alt='User Image'>
+                        <p class='mt-3 mb-0'>
+                            [USER_NOMBRE] [USER_APELLIDO]
+                            <small>[USER_CARGO]</small>
+                        </p>
+                    </li>
+                    <li class='user-body' style='display: none;'></li>
+                    <li class='user-footer m-2'>
+                        <div class='float-left'>
+                            <a href='[URL_PERFIL]' class='btn btn-sm btn-outline-success broder border-success'>Perfil</a>
+                        </div>
+                        <div class='float-right'>
+                            <a href='[URL_CERRAR]' class='btn btn-sm btn-outline-danger broder border-danger'>Cerrar Sesión</a>
+                        </div>
+                    </li>
+				</ul>
+			</li>
+		</li>
+	</ul>
+</div>
+</nav>
+</header>", PHP_EOL;
+}
+if ( count($laterales) ) {
+    echo "<aside class='main-sidebar'>
+        <section class='sidebar'>
+        <ul class='sidebar-menu' data-widget='tree'>
+            <li class='header'>MENU PRINCIPAL</li>", PHP_EOL;
+    for($i = 0; $i < count($laterales); $i++ ) {
+        $acceso_admin = ( isset($laterales[$i]['admin']) && $this->_is_admin ) ? $laterales[$i]['admin'] : true;
+        $acceso_sudo = ( isset($laterales[$i]['sudo']) && $this->_is_sudo ) ? $laterales[$i]['sudo'] : true;
+        if ( $this->_acl->accesoMenus($laterales[$i]['permiso']) ) {
+            if ( !$acceso_admin || !$acceso_sudo ) {
+                continue;
+            }
+            if ( isset($laterales[$i]['submenus']) ) {
+                if ( $laterales[$i]['id'] == $id ) {
+                    echo "<li class='active treeview menu-open'>", PHP_EOL;
+                } else {
+                    echo "<li class='treeview'>", PHP_EOL;
+                }
+                if ( $laterales[$i]['id'] == $id ) {
+                    echo "<a href='#'>{$laterales[$i]['titulo']}", PHP_EOL;
+                } else {
+                    echo "<a href='#'>{$laterales[$i]['titulo']}", PHP_EOL;
+                }
+                echo "<span class='pull-right-container'>
+                            <i class='fa fa-angle-left pull-right'></i>
+                        </span>
+                        </a>
+                        <ul class='treeview-menu' id='{$laterales[$i]['id']}'>", PHP_EOL;
+                foreach ( $laterales[$i]['submenus'] as $titulo => $enlace ) {
+                echo "<li><a href='{$enlace}'>{$titulo}</a></li>", PHP_EOL;
+                }
+                echo "</ul>", PHP_EOL;
+            } else {
+                if ( $laterales[$i]['id'] == $id ) {
+                    echo "<li class='active'><a href='{$laterales[$i]['enlace']}'>{$laterales[$i]['titulo']}</a>", PHP_EOL;
+                } else {
+                    echo "<li><a href='{$laterales[$i]['enlace']}'>{$laterales[$i]['titulo']}</a>", PHP_EOL;
+                }
+            }
+            echo "</li>", PHP_EOL;
+        }
+    }
+    echo "</ul>", PHP_EOL;
+    echo "</section>", PHP_EOL;
+    echo "</aside>", PHP_EOL;
+}
+?>

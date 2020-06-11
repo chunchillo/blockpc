@@ -1,0 +1,11 @@
+<?php
+foreach($menus as $menu) {
+	$class = '';
+	if ( $menu['id'] == $id ) {
+		$class = 'active';
+	}
+	echo "<li class='nav-item {$class}'>";
+	echo "<a class='nav-link' href='{$menu['enlace']}' id='{$menu['id']}'>{$menu['titulo']}</a>";
+	echo "</li>";
+}
+?>

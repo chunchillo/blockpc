@@ -1,0 +1,18 @@
+<tr id="[ID]">
+    <th class="" scope="row">[CONTADOR]</td>
+    <td class="">[PERMISO]</td>
+    <td class="">[LLAVE]</td>
+    <td class="">[DESCRIPCION]</td>
+    <?php if ( $this->_permiso ) : ?>
+    <td class="">
+        <div class="btn-group" role="group">
+            <a class="btn btn-sm btn-outline-success mr-1 [NO_EDITAR]" href="[URL_EDITAR]">
+                <i class="far fa-edit"></i>
+            </a>
+            <a class="btn btn-sm btn-outline-danger mr-1 [NO_ELIMINAR]" href="[URL_ELIMINAR]">
+                <i class="fas fa-trash"></i>
+            </a>
+        </div>
+    </td>
+    <?php endif; ?>
+</tr>

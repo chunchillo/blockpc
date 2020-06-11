@@ -1,0 +1,116 @@
+<section class="content-header">
+    <h1><i class="fas fa-user fa-xs"></i> Usuario <small>Editar Perfil</small></h1>
+	<ol class="breadcrumb mt-1">
+		<li><a class="text-info" href="[URL_PERFIL]">Perfil</a></li>
+		<li><a>[FECHA]</a></li>
+	</ol>
+    <div class="row"><div class="col">[ERROR][MENSAJE]</div></div>
+</section>
+<section class="content">
+    <div class="box box-success">
+        <div class="box-body">
+            <form class="small" method="post" action="" id="formEditarUsuario" autocomplete="off" enctype="multipart/form-data">
+                <input type="hidden" name="token" id="token" value="[TOKEN]">
+                <input type="hidden" name="id" id="id" value="[ID]">
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Usuario <small>(Obligatorio)</small></legend>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="alias">Usuario</label>
+                            <input type="text" name="alias" id="alias" class="form-control form-control-sm" value="[ALIAS]" placeholder="Usuario">
+                        </div>
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control form-control-sm" value="[EMAIL]" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="clave">Clave</label>
+                            <input type="password" name="clave" id="clave" class="form-control form-control-sm" value="" placeholder="Password" autocomplete="new-password">
+                        </div>
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="repetir">Repetir Clave</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control form-control-sm" placeholder="Confirmar Password" name="repetir" id="repetir" autocomplete="new-password">
+                                <div class="input-group-append">
+                                    <button class="btn btn-sm btn-primary" type="button" id="generarClave">Generar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Perfil <small>(Opcional)</small></legend>
+                    <div class="form-row">
+                        <div class="col-12 col-md-4 mb-1 custom-group">
+                            <label for="nombre">Nombres</label>
+                            <input type="text" name="nombre" id="nombre" class="form-control form-control-sm" value="[NOMBRE]" placeholder="Nombres">
+                        </div>
+                        <div class="col-12 col-md-4 mb-1 custom-group">
+                            <label for="apellido">Apellidos</label>
+                            <input type="text" name="apellido" id="apellido" class="form-control form-control-sm" value="[APELLIDO]" placeholder="Apellidos">
+                        </div>
+                        <div class="col-12 col-md-4 mb-1 custom-group">
+                            <label for="rut">RUT</label>
+                            <input type="text" name="rut" id="rut" class="form-control form-control-sm" value="[RUT]" placeholder="RUT">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" name="telefono" id="telefono" class="form-control form-control-sm" value="[TELEFONO]" placeholder="Teléfono">
+                        </div>
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="celular">Celular</label>
+                            <input type="text" name="celular" id="celular" class="form-control form-control-sm" value="[CELULAR]" placeholder="Celular">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 mb-1 custom-group">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" name="direccion" id="direccion" class="form-control form-control-sm" value="[DIRECCION]" placeholder="Dirección">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 col-md-4 mb-1 custom-group">
+                            <label for="region">Región</label>
+                            <select class="form-control form-control-sm" name="region" id="region">[REGIONES]</select>
+                        </div>
+                        <div class="col-12 col-md-4 mb-1 custom-group">
+                            <label for="provincia">Provincia</label>
+                            <select class="form-control form-control-sm" name="provincia" id="provincia">[PROVINCIAS]</select>
+                        </div>
+                        <div class="col-12 col-md-4 mb-1 custom-group">
+                            <label for="comuna">Comuna</label>
+                            <select class="form-control form-control-sm" name="comuna" id="comuna">[COMUNAS]</select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 mb-1 custom-group">
+                            <label for="imagen">Comuna</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="imagen" id="imagen" title="Máximo 800px/600px Peso 2Mb">
+                                <label class="custom-file-label" for="imagen">Choose Image</label>
+                            </div>
+                            <span class="small text-muted ml-2">Alto x Ancho: 400 x400. Máximo Peso 2Mb</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 mb-1 custom-group">
+                            <label for="resumen">Sobre ti</label>
+                            <textarea class="form-control" title="Máximo 256 caracteres" cols="5" name="resumen" id="resumen" placeholder="Sobre ti">[RESUMEN]</textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-row">
+                    <div class="col-12 col-md-6 mb-2 d-flex">
+                        <button type="submit" class="btn btn-sm btn-success btn-block mr-2">Editar Perfil</button>
+                        <a href="[URL_PERFIL]" class="btn btn-md btn-warning">Cancelar</a>
+                    </div>
+                    <div class="col-12 col-md-6 mb-2"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

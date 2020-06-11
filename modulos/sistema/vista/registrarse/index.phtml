@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12 col-sm-4 mx-auto">
+            <div class="text-center">
+                <img class="mb-2" src="[VISTA_IMG]blockpc2.png" alt="[TITULO] [APP_NAME]" height="72">
+                <h2 class="mb-3 font-weight-normal">[TITULO]</h2>
+            </div>
+            <form class="mb-1" action="" method="post">
+                <div class="form-group">
+					<label for="alias" class="sr-only">Usuario</label>
+					<input type="text" class="form-control form-control-sm" name="alias" id="alias" placeholder="Nombre de usuario" autocomplete="username" value="[ALIAS]" required autofocus>
+				</div>
+				<div class="form-group">
+					<label for="email" class="sr-only">Dirección de correo</label>
+					<input type="email" class="form-control form-control-sm" name="email" id="email" placeholder="Correo de usuario" autocomplete="username" value="[EMAIL]" required>
+				</div>
+				<div class="form-group">
+					<label for="clave" class="sr-only">Clave</label>
+					<input type="password" class="form-control form-control-sm" name="clave" id="clave" placeholder="Clave de usuario" autocomplete="username" value="" required>
+				</div>
+				<div class="form-group">
+					<label for="repetir" class="sr-only">Clave</label>
+					<input type="password" class="form-control form-control-sm" name="repetir" id="repetir" placeholder="Repetir Clave" autocomplete="username" value="" required autofocus>
+				</div>
+				<input type="hidden" name="token" id="token" value="[TOKEN]">
+				<button class="btn btn-sm btn-primary btn-block" id="btnRegistrarse" type="submit">Registrarse</button>
+            </form>
+            <div class="d-flex justify-content-between mb-3">
+                <a class="small" href="[URL_BASE]sistema/login">Login</a>
+                <a class="small" href="[URL_BASE]sistema/recuperar">Recuperar Password</a>
+            </div>
+		</div>
+	</div>
+</div>

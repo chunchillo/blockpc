@@ -1,0 +1,98 @@
+<section class="content-header">
+    <h1><i class='fas fa-users mr-1'></i> Usuario <small>Eliminar</small></h1>
+    <ol class="breadcrumb">
+        <li><a class="active text-danger" href="#">Eliminar</a></li>
+        <li><a class="text-primary" href="[URL_BASE]usuarios/activos">Activos</a></li>
+		<li><a class="text-secondary" href="[URL_BASE]usuarios/noactivos">No Activos</a></li>
+		<li><a class="text-danger" href="[URL_BASE]usuarios/eliminados">Eliminados</a></li>
+		<li><a class="text-info" href="[URL_BASE]usuarios/nuevo">Nuevo Usuario</a></li>
+        <li><a href="#">[FECHA]</a></li>
+    </ol>
+    <div class="row"><div class="col">[ERROR][MENSAJE]</div></div>
+</section>
+<section class="content">
+    <div class="box box-danger">
+        <div class="box-body">
+            <form class="small" method="post" action="" id="formEliminarUsuario" autocomplete="off">
+                <input type="hidden" name="token" id="token" value="[TOKEN]">
+                <input type="hidden" name="id" id="id" value="[ID]">
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Usuario <small>(Obligatorio)</small></legend>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="alias">Usuario</label>
+                            <input type="text" id="alias" class="form-control form-control-sm" value="[ALIAS]" placeholder="Usuario">
+                        </div>
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control form-control-sm" value="[EMAIL]" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="cargo">Rol Usuario</label>
+                            <input type="text" id="cargo" class="form-control form-control-sm" value="[CARGO]" placeholder="Rol Usuario">
+                        </div>
+                        <div class="col-12 col-md-6 mb-1 custom-group"></div>
+                    </div>
+                </fieldset>
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Perfil <small>(Opcional)</small></legend>
+                    <div class="form-row">
+                        <div class="col-12 col-md-4 mb-1 custom-group">
+                            <label for="nombre">Nombres</label>
+                            <input type="text" id="nombre" class="form-control form-control-sm" value="[NOMBRE]" placeholder="Nombres">
+                        </div>
+                        <div class="col-12 col-md-4 mb-1 custom-group">
+                            <label for="apellido">Apellidos</label>
+                            <input type="text" id="apellido" class="form-control form-control-sm" value="[APELLIDO]" placeholder="Apellidos">
+                        </div>
+                        <div class="col-12 col-md-4 mb-1 custom-group">
+                            <label for="rut">RUT</label>
+                            <input type="text" id="rut" class="form-control form-control-sm" value="[RUT]" placeholder="RUT">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" id="telefono" class="form-control form-control-sm" value="[TELEFONO]" placeholder="Teléfono">
+                        </div>
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="celular">Celular</label>
+                            <input type="text" id="celular" class="form-control form-control-sm" value="[CELULAR]" placeholder="Celular">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 mb-1 custom-group">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" class="form-control form-control-sm" value="[DIRECCION]" placeholder="Dirección">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 mb-1 custom-group">
+                            <label for="region">Región</label>
+                            <input type="text" id="region" class="form-control form-control-sm" value="[REGION]" placeholder="Región">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="provincia">Provincia</label>
+                            <input type="text" id="provincia" class="form-control form-control-sm" value="[PROVINCIA]" placeholder="Provincia">
+                        </div>
+                        <div class="col-12 col-md-6 mb-1 custom-group">
+                            <label for="comuna">Comuna</label>
+                            <input type="text" id="comuna" class="form-control form-control-sm" value="[COMUNA]" placeholder="Comuna">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-row">
+                    <div class="col-12 col-md-6 d-flex">
+                        <button type="submit" class="btn btn-sm btn-danger btn-block mr-2">Eliminar Usuario</button>
+                        <a href="[URL_BASE]usuarios/activos" class="btn btn-md btn-warning">Cancelar</a>
+                    </div>
+                    <div class="col-12 col-md-6"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

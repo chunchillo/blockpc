@@ -1,0 +1,21 @@
+<tr id="[ID]">
+    <th class="" scope="row">[CONTADOR]
+    <td class="">[ROLE]
+    <td class="">[DESCRIPCION]
+    <td class="text-center">[TOTAL]
+    <td class="text-primary text-center">[ACTIVADOS]
+    <td class="text-secondary text-center">[NOACTIVADOS]
+    <td class="text-danger text-center">[ELIMINADOS]
+    <?php if ( $this->_permiso ) : ?>
+    <td class="text-center">
+        <div class="btn-group" role="group">
+            <a class="btn btn-sm btn-outline-success mr-2 [NO_EDITAR]" href="[URL_EDITAR]">
+                <i class="far fa-edit"></i>
+            </a>
+            <a class="btn btn-sm btn-outline-danger mr-2 [NO_ELIMINAR]" href="[URL_ELIMINAR]">
+                <i class="fas fa-trash"></i>
+            </a>
+        </div>
+    </td>
+    <?php endif; ?>
+</tr>

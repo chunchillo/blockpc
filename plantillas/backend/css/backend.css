@@ -1,0 +1,221 @@
+/* Cambios al AdminLTE */
+.navbar {
+    padding: 0 15px;
+}
+.main-header {
+    max-height: 108px;
+}
+.main-header .logo {
+    height: 54px;
+    min-height: 54px;
+    line-height: 54px;
+    font-size: larger;
+}
+.content-header {
+    position: relative;
+    padding: 10px 0 0 0;
+}
+.content {
+    min-height: 250px;
+    padding: 10px 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+.fixed .content-wrapper, .fixed .right-side {
+    padding-top: 54px;
+}
+.main-header .navbar {
+    min-height: 54px;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.navbar-nav>.user-menu>.dropdown-menu>li.user-header>img {
+    border-color: transparent;
+    border-color: none;
+}
+.navbar-nav>.user-menu>.dropdown-menu>li.user-header>p {
+    font-size: smaller;
+}
+.user-body {
+    background-color: #3c8dbc;
+}
+.btn-perfil {
+    background-color: #00ff8a;
+    border-color: #00ff8a;
+    color: #fff;
+    font-size: small;
+}
+.btn-close-session {
+    background-color: #ff9292;
+    border-color: #ff9292;
+    color: #fff;
+    font-size: small;
+}
+.user-footer {
+    padding: 0 !important;
+}
+.sidebar-menu>li>a {
+    padding: 7px 5px 7px 15px;
+    font-size: small;
+}
+.sidebar-menu li > a > .pull-right-container {
+    top: 40%;
+}
+.treeview-menu>li>a {
+    padding: 5px 5px 5px 20px;
+    font-size: 12px;
+}
+.menu-open > .treeview-menu>li>a {
+    padding: 5px 5px 5px 20px;
+    display: block;
+    font-size: 12px;
+}
+.content-header>.breadcrumb>li+li:before {
+	content: "|";
+	padding: 0 5px;
+    color: #111;
+}
+.content-header>.breadcrumb>li>a.active {
+    border-bottom: 2px solid;
+}
+/* legends forms */
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1em 1em 1em !important;
+    margin: 0 0 1em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+    font-size: inherit;
+}
+textarea {
+    font-family: inherit;
+    font-size: 12px;
+}
+/* custom group forms */
+.custom-group label:first-child {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: smaller;
+}
+/* custom table */
+.custom-table {
+    font-size: small;
+}
+.custom-table td, .custom-table th {
+    padding: .25em .5em;
+    vertical-align : middle;
+}
+.custom-table thead {
+    background-color: aliceblue;
+}
+.custom-table th {
+    font-size: 1.1em;
+    white-space: nowrap;
+}
+.custom-table td {
+    font-size: .9em;
+}
+/* Ventana mini Modal */
+.modal_wrap{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+}
+.mensaje_modal{
+    background: #fff;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+    width: 400px;
+    padding: 30px 20px 15px;
+}
+.mensaje_modal h3{
+    text-align: center;
+    font-family: 'Ubuntu';
+	font-size: 20px;
+	font-weight: 400;
+}
+.mensaje_modal h3:after{
+    content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #C5C5C5;
+	margin: 10px 0px 15px;
+}
+.mensaje_modal div:first-child {
+	font-size: 1rem;
+}
+.mensaje_modal div.mensaje {
+	font-size: .9rem;
+    line-height: 20px;
+    color: #606060;
+}
+.mensaje_modal div.mensaje:after {
+    font-family: FontAwesome;
+    display: inline-block;
+    color: #E25151;
+    margin-right: 8px;
+}
+#btnCloseModal{
+	padding: 3px 10px;
+	margin-top: 10px;
+	background: #E25151;
+	color: #fff;
+	border: 2px solid #B14141;
+	cursor: pointer;
+	float: right;
+}
+/* media queries */
+@media (max-width: 768px) {
+    .content-header>.breadcrumb>li+li:last-child {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+	.content-header> h1 {
+		font-size: 1em;
+	}
+    .fixed .content-wrapper, .fixed .right-side {
+		padding-top: 50px;
+	}
+	.input-group span.input-group-addon,
+	.input-group label.input-group-text,
+	.input-group .input-group-prepend .input-group-text {
+		min-width:auto;
+    }
+}
+@media (max-width: 575px) {
+	.content-header> h1 {
+		font-size: .9em;
+		margin: 0;
+	}
+}
+@media (max-width: 576px) {
+	.content-header> h1 {
+		font-size: 1em;
+		margin: 0;
+	}
+	.navbar-custom-menu>.navbar-nav {
+		display: -webkit-flex; /* Safari */
+		-webkit-flex-direction: row; /* Safari 6.1+ */
+		display: flex;
+		flex-direction: row;
+	}
+}

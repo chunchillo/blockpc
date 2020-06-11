@@ -1,0 +1,71 @@
+<section class="content-header">
+    <h1><i class='fas fa-cogs mr-1'></i> Roles <small>Listado</small></h1>
+    <ol class="breadcrumb">
+		<li><a class="active text-primary" href="#">Listado</a></li>
+		<?php if ( $this->_acl->accesoVista("admin_acces") ) : ?>
+		<li><a class="text-info" href="[URL_BASE]usuarios/roles/nuevo">Nuevo Rol</a></li>
+        <?php endif; ?>
+        <li><a href="#">[FECHA]</a></li>
+	</ol>
+    <div class="row"><div class="col">[ERROR][MENSAJE]</div></div>
+</section>
+<section class="content">
+	<div class="box box-primary">
+        <div class="box-header">
+			<h3 class="box-title"><span class="small mt-1" id="leyenda">[LEYENDA]</span></h3>
+		</div>
+		<div class="box-body">
+            <div class="row">
+                <div class="col-12 col-md-8 mb-2">
+                    <select class="form control form-control-sm" id="limite" style="width: auto;">
+                        <option value="10">10</option>
+                        <option value="25" selected>25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <button type="button" class="btn btn-sm btn-outline-primary" id="btn-print">Print</button>
+                    <a href="[URL_BASE]usuarios/exportar/pdf" class="btn btn-sm btn-outline-primary" id="btn-pdf">PDF</a>
+                    <a href="[URL_BASE]usuarios/exportar/excel" class="btn btn-sm btn-outline-primary" id="btn-xls">Excel</a>
+                    <button type="button" class="btn btn-sm btn-outline-primary" id="btn-word">Word</button>
+                    <a href="[URL_BASE]usuarios/exportar/csv" class="btn btn-sm btn-outline-primary" id="btn-csv">CSV</a>
+                </div>
+                <div class="col-12 col-md-4 mb-2">
+                    <div class="input-group input-group-sm my-1" id="cabecera">
+                        <input type="hidden" value="[TOKEN]" id="token">
+                        <input type="hidden" value="1" id="pagina">
+                        <input type="hidden" value="ASC" id="orden">
+					    <input type="hidden" value="r.id" id="campo">
+                        <input class="form-control form-control-sm" type="text" id="search" placeholder="Buscador">
+                        <div class="input-group-append">
+                            <button class="btn btn-sm btn-outline-info question-mark float-right" type="button" title="Buscador.|Se realiza una búsqueda en la base de datos que coincida con un <b>Rol</b>, o una <b>Descripción</b>"><i class="fas fa-question"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover custom-table" id="tabla">
+                            <thead class="table-info">
+                                <tr class="small" id="columnas">
+                                    <th class=""><i class='fas fa-sort mr-1' data-orden='ASC' data-campo='r.id'></i> #</th>
+                                    <th class=""><i class='fas fa-sort mr-1' data-orden='ASC' data-campo='r.role'></i> Rol</th>
+                                    <th class=""><i class='fas fa-sort mr-1' data-orden='ASC' data-campo='r.descripcion'></i> Descripción</th>
+                                    <th class="text-center"> N° Usuarios</th>
+                                    <th class="text-center"> <span class="text-primary" title="Numero Usuarios Activados">A</span></th>
+                                    <th class="text-center"> <span class="text-secondary" title="Numero Usuarios No Activados">NA</span></th>
+                                    <th class="text-center"> <span class="text-danger" title="Numero Usuarios Eliminados">E</span></th>
+                                    <?php if ( $this->_acl->accesoVista("admin_acces") ) : ?>
+                                    <th class="text-center">Opciones</th>
+                                    <?php endif; ?>
+                                </tr>
+                            </thead>
+                            <tbody id="datos">
+                                [TBODY]
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="my-1 d-flex justify-content-center" id="paginacion">[PAGINACION]</div>
+                </div>
+            </div>
+		</div>
+	</div>
+</section>

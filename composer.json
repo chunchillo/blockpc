@@ -1,0 +1,35 @@
+{
+    "name": "blockpc/mvc",
+    "version": "1.0.0",
+    "description": "Sistema POS sobre PHP",
+	"authors": [
+        {
+            "name"    : "Juan Carlos Marchant",
+            "email"   : "juan.marchant@gmail.com",
+            "homepage": "https://www.blockpc.cl",
+            "role"    : "Desarrollador Web"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "wixel/gump": "^1.11",
+        "phpmailer/phpmailer": "^6.1"
+    },
+	"autoload": {
+        "psr-4": {
+            "Blockpc\\Clases\\"     	: "core/clases",
+            "Blockpc\\Librerias\\"  	: "core/librerias",
+            "Ajax\\"               	    : "modulos/ajax",
+            "Index\\"               	: "modulos/index",
+            "Sistema\\"             	: "modulos/sistema",
+            "Usuarios\\Index\\"     	: "modulos/usuarios/index",
+            "Usuarios\\Perfil\\"		: "modulos/usuarios/perfil",
+            "Usuarios\\Permisos\\"  	: "modulos/usuarios/permisos",
+            "Usuarios\\Roles\\"  		: "modulos/usuarios/roles",
+            "Usuarios\\Acl\\"  			: "modulos/usuarios/acl"
+        }
+    },
+	"config": {
+		"optimize-autoloader": true
+	}
+}

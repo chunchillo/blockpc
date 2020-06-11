@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* recuperar.css */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	border: none;
+	-webkit-text-fill-color: #000;
+	-webkit-box-shadow: none;
+	transition: background-color 5000s ease-in-out 0s;
+}
+.form-box {
+	color: white;
+	font-size: 1rem;
+}
+.form-group {
+	overflow: hidden;
+	font-size: 1rem;
+	padding: 8px 0;
+	margin: 8px 0;
+	border-bottom: 1px solid #ccc;
+}
+.form-group input,
+.form-group textarea {
+	font-family: Arial;
+	font-size: .9rem;
+	border: none;
+	outline: none;
+	background: none;
+	color: #000;
+	margin: 0 8px;
+	width: 100%;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #000;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #000;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #000;
+}

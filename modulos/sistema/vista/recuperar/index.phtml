@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12 col-sm-4 mx-auto">
+            <div class="text-center">
+                <img class="mb-2" src="[VISTA_IMG]blockpc2.png" alt="[TITULO] [APP_NAME]" height="72">
+                <h2 class="mb-3 font-weight-normal">[TITULO]</h2>
+            </div>
+			<form class="mb-1" method="post" id="recuperarPass">
+				<div class="form-group">
+					<label for="txtUsuario" class="sr-only">Usuario</label>
+					<input type="text" name="txtUsuario" id="txtUsuario" placeholder="Nombre de usuario" autocomplete="username" value="[TXTUSUARIO]" required autofocus>
+				</div>
+				<div class="form-group">
+					<label for="txtCorreo" class="sr-only">Dirección de correo</label>
+					<input type="email" name="txtCorreo" id="txtCorreo" placeholder="Correo de usuario" autocomplete="username" value="[TXTCORREO]" required autofocus>
+				</div>
+				<input type="hidden" name="token" id="token" value="[TOKEN]">
+				<button class="btn btn-sm btn-primary btn-block" id="btnRecuperar" type="submit">Recuperar Clave</button>
+            </form>
+            <div class="d-flex justify-content-between mb-3">
+                <a class="small" href="[URL_BASE]sistema/login">Login</a>
+                <a class="small" href="[URL_BASE]sistema/registrarse">Registrarse</a>
+            </div>
+		</div>
+	</div>
+</div>

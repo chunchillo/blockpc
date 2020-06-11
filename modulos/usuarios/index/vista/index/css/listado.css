@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* listado.css */
+.media-left {
+	margin: .5rem!important;
+}
+#listado-usuarios {
+	width: 100%;
+}
+.dt-buttons, .dataTables_info {
+	float:left;
+}

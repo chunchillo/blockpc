@@ -1,0 +1,54 @@
+<section class="content-header">
+    <h1><i class="fas fa-user fa-xs"></i> ACL <small>Lista de Control de Acceso</small></h1>
+	<ol class="breadcrumb mt-1">
+		<li><a class="text-primary" href="[URL_BASE]usuarios/permisos/listar">Permisos</a></li>
+		<li><a class="text-primary" href="[URL_BASE]usuarios/roles/listar">Roles</a></li>
+		<li><a>[FECHA]</a></li>
+	</ol>
+    <div class="row"><div class="col">[ERROR][MENSAJE]</div></div>
+</section>
+<section class="content">
+	<form id="permisosRol" name="permisosRol" method="post" action="">
+		<div class="row">
+			<div class="col">
+				<div class="box box-primary">
+					<div class="box-header">
+					   <div class="input-group input-group-sm">
+							<div class="input-group-prepend">
+								<span class="input-group-text" for="role">Seleccionar Rol </span>
+							</div>
+							<select class="form-control" name="role" id="role">
+								<option value="0">Seleccionar...</option>
+								[ROLES]
+							</select>
+						</div>
+					</div>
+					<div class="box-body">
+						<table class="table table-hover custom-table">
+							<thead class="small">
+								<tr class="d-flex">
+									<th class="col-3">Permiso</td>
+									<th class="col-3">Llave</td>
+									<th class="col-2">Habilitado</td>
+									<th class="col-2">Denegado</td>
+									<th class="col-2">Ignorar</td>
+							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="5">
+										<input type="hidden" name="token" id="token" value="[TOKEN]">
+										<?php if ( $this->_acl->accesoVista("admin_acces") ) : ?>
+										<input class="btn btn-primary btn-sm pull-left" type="submit" id="cambiarPermisos" value="Guardar Cambios" disabled>
+										<?php endif; ?>
+								</tr>
+							</tfoot>
+							<tbody id="permisos">
+								[TBODY]
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</section>

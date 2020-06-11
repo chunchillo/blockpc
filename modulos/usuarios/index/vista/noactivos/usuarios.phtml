@@ -1,0 +1,27 @@
+<tr id="[ID]">
+    <td class="col-xs-1">[CONTADOR]</td>    
+    <td class="col-xs-1">[USUARIO]</td>
+    <td class="col-xs-2">[NOMBRES]</td>
+    <td class="col-xs-2">[EMAIL]</td>
+    <td class="col-xs-1">[RUT]</td>
+    <td class="col-xs-2">[TELEFONO]</td>
+    <td class="col-xs-1">[CARGO]</td>
+    <td class="col-xs-2">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-sm btn-outline-info mr-1 btn-ver" data-toggle="modal" data-target="#modal-ver" value="[ID]">
+                <i class="fa fa-eye"></i>
+            </button>
+            <?php if ( $this->_permiso ) : ?>
+				<a class="btn btn-sm btn-outline-success mr-1" href="[URL_EDITAR]">
+					<i class="fas fa-edit"></i>
+				</a>
+				<a class="btn btn-sm btn-outline-primary mr-1" href="[URL_REVISAR]">
+					<i class="fa fa-check"></i>
+				</a>
+				<a class="btn btn-sm btn-outline-danger mr-1" href="[URL_ELIMINAR]">
+					<i class="fas fa-times"></i>
+				</a>
+            <?php endif; ?>
+        </div>
+    </td>
+</tr>

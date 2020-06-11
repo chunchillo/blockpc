@@ -1,0 +1,117 @@
+<section class="content-header">
+    <div class="topnav" id="myTopnav">
+		<a class="first">[ICONO] [TITULO]</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
+		<a class="active-info" href="#">Perfil</a>
+		<a class="last float-right d-none d-sm-block"><small>[FECHA]</small></a>
+		<?php if ( $this->_acl->accesoVista("admin_acces") ): ?>
+		<a href="[URL_ACTIVOS]">Usuarios Activos</a>
+		<a href="[URL_NOACTIVOS]">Artículos No Activos</a>
+		<a class="float-right" href="[URL_NUEVO]">Nuevo Usuario</a>
+		<?php endif; ?>
+		<a class="float-right text-success" href="[URL_EDITAR]">Editar Perfil</a>
+	</div>
+    <div class="row"><div class="col">[ERROR][MENSAJE]</div></div>
+</section>
+<section class="content">
+	<div class="box box-success">
+		<div class="box-body">
+			<div class="contenedor pb-3">
+				<div class="tarjeta">
+					<div class="firstinfo">
+						<img src="[RUTA_IMAGEN]" alt="Usuario [USUARIO]"/>
+						<div class="profileinfo">
+							<h1>[NOMBRE] [APELLIDO]</h1>
+							<h3>[CARGO]</h3>
+							<h3>[EMAIL]</h3>
+							<h3>[TELEFONO]</h3>
+							<p class="bio">[RESUMEN]</p>
+							<hr>
+							<p><small>Creado el <b>[CREADO_EL]</b></small></p>
+							<p><small class="float-right mt-1">Sesión: [TIEMPO]</small></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Sección Fundación Oncológica -->
+			<?php if ( $this->_acl->accesoVista("general_acces") ): ?>
+			<div class="container">
+				<div class="form-row">
+					<div class="col-12 col-md-4">
+						<button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#modalEstado">Estado Socio</button>
+					</div>
+					<div class="col-12 col-md-4">
+						<button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#modalDatos">Completar Datos Socio</button>
+					</div>
+					<div class="col-12 col-md-4">
+						<button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#modalOtros">Otro Asunto</button>
+					</div>
+				</div>
+			</div>
+			<?php endif; ?>
+			<!-- Fin Sección Fundación Oncológica -->
+		</div>
+	</div>
+</section>
+<!-- Modal Estado Socio -->
+<div class="modal fade" id="modalEstado" tabindex="-1" role="dialog" aria-labelledby="EstadoSocio" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="EstadoSocio">Estado del Socio</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+			...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal Formulario del Socio -->
+<div class="modal fade" id="modalDatos" tabindex="-1" role="dialog" aria-labelledby="DatosFormularioSocio" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="DatosFormularioSocio">Datos Formulario del Socio</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+			...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal Otros Datos del Socio -->
+<div class="modal fade" id="modalOtros" tabindex="-1" role="dialog" aria-labelledby="OtrosDatosSocio" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="OtrosDatosSocio">Otros Datos del Socio</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+			...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>

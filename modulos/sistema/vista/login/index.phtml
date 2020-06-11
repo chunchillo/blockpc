@@ -1,0 +1,36 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 col-md-4 mx-auto">
+            <div class="text-center">
+                <img class="mb-2" src="[VISTA_IMG]blockpc2.png" alt="[TITULO] [APP_NAME]" height="72">
+                <h2 class="mb-3 font-weight-normal">[TITULO]</h2>
+            </div>
+			<form class="mb-1" id="formularioLogin" method="post">
+				<div class="form-group">
+					<label for="txtNombre" class="sr-only">Dirección de correo</label>
+					<input type="text" class="form-control form-control-sm" name="txtNombre" id="txtNombre" placeholder="Dirección de correo" autocomplete="username" value="[TXTNOMBRE]" required autofocus>
+				</div>
+				<div class="form-group">
+                    <label for="txtClave" class="sr-only">Clave</label>
+                    <input type="password" class="form-control form-control-sm" name="txtClave" id="txtClave" placeholder="Tu Clave" autocomplete="current-password" value="[TXTCLAVE]" required>
+				</div>
+				<div class="checkbox small mb-3">
+					<label>
+						<input type="checkbox" id="check" name="check" [CHECK]> Recordarme
+					</label>
+                </div>
+                <div class="d-flex">
+                    <input type="hidden" name="token" id="token" value="[TOKEN]">
+				    <button class="btn btn-sm btn-primary btn-block" id="btnLogin" type="submit">Enviar</button>
+                </div>
+            </form>
+            <div class="d-flex justify-content-between mb-3">
+                <a class="small" href="[URL_BASE]sistema/recuperar">Recuperar Password</a>
+                <a class="small" href="[URL_BASE]sistema/registrarse">Registrarse</a>
+            </div>
+            <span class="small d-block">tesis:4sudo</span>
+            <span class="small d-block">admin:4admin</span>
+            <span class="small d-block">usuario:4user</span>
+		</div>
+	</div>
+</div>

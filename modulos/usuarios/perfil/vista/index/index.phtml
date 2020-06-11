@@ -1,0 +1,78 @@
+<section class="content-header">
+	<h1><i class="fas fa-user fa-xs"></i> Usuario <small>Perfil</small></h1>
+	<ol class="breadcrumb mt-1">
+		<li><a class="text-success" href="[URL_EDITAR]">Editar Perfil</a></li>
+		<li><a>[FECHA]</a></li>
+	</ol>
+    <div class="row"><div class="col">[ERROR][MENSAJE]</div></div>
+</section>
+<section class="content">
+	<div class="box box-info">
+		<div class="box-body">
+			<div class="contenedor pb-3">
+				<div class="tarjeta">
+					<div class="firstinfo">
+						<img src="[RUTA_IMAGEN]" alt="Usuario [USUARIO]"/>
+						<div class="profileinfo">
+							<h1>[NOMBRE] [APELLIDO]</h1>
+							<h3>[CARGO]</h3>
+							<h3>[EMAIL]</h3>
+							<h3>[TELEFONO]</h3>
+							<p class="bio">[RESUMEN]</p>
+							<hr>
+							<p><small>Creado el <b>[CREADO_EL]</b></small></p>
+							<p><small class="float-right mt-1">Sesión: [TIEMPO]</small></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php if ( $this->_acl->accesoVista("sudo_acces") ): ?>
+			<div class="container">
+				<div class="form-row">
+					<div class="col-12 mb-2">
+						<button class="btn btn-danger btn-block" type="button" data-toggle="modal" data-target="#modalTruncarDB">Eliminar Datos DB</button>
+						<input type="hidden" id="token" value="[TOKEN]">
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-sm btn-info" id="correo">Send Email</button>
+                    </div>
+				</div>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</section>
+<!-- Modal Eliminar Datos DB -->
+<div class="modal fade" id="modalTruncarDB" tabindex="-1" role="dialog" aria-labelledby="EstadoSocio" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="EstadoSocio">Eliminar Datos DB</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="card">
+					<div class="card-body">
+						<p class="card-text">Las siguientes tablas seran vaciadas de la base de datos:</p>
+						<ul class="list-group small">
+							<li class="list-group-item py-2">Entidades (Solo Concesionarios y Locales)</li>
+							<li class="list-group-item py-2">Sucursales</li>
+							<li class="list-group-item py-2">Contactos (Y la relacion a Entidades)</li>
+							<li class="list-group-item py-2">Importación</li>
+							<li class="list-group-item py-2">Stock</li>
+							<li class="list-group-item py-2">Ventas</li>
+							<li class="list-group-item py-2">Servicios</li>
+							<li class="list-group-item py-2">Contratos</li>
+						</ul>
+						<a href="#" class="btn btn-danger btn-block" id="truncar">Eliminar</a>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
