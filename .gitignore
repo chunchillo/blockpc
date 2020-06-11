@@ -1,7 +1,5 @@
-archivos/db/
-archivos/img/
 archivos/usuarios/
-assets/
-logs/
+assets/*
+logs/*
 vendor/
 optimizar.bat
