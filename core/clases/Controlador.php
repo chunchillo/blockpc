@@ -111,6 +111,7 @@ Abstract class Controlador {
             $variables['url_imagen_perfil'] = Sesion::getUsuario('ruta_imagen');
             $variables['user_alias'] = Sesion::getUsuario('alias');
             $variables['user_cargo'] = Sesion::getUsuario('cargo');
+            $variables['user_correo'] = Sesion::getUsuario('email');
             $variables['user_nombre'] = Sesion::getUsuario('nombre');
             $variables['user_apellido'] = Sesion::getUsuario('apellido');
         }
@@ -234,7 +235,7 @@ Abstract class Controlador {
         $patternAll = '1234567890@-_.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $max = strlen($patternAll)-1;
         for($i=0; $i < $longitud; $i++) {
-            $key .= $patternAll{mt_rand(0,$max)};
+            $key .= $patternAll[mt_rand(0,$max)];
         }
         return $key;
     }

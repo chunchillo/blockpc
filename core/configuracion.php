@@ -16,10 +16,10 @@ if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
 define('DOMINIO', $_SERVER['SERVER_NAME']);
 $uri .= DOMINIO . '/';
 
-if ( DOMINIO == 'localhost' ) {
+if ( DOMINIO == WEB_DEV ) {
 	define('SESION_PATH', '/');
 	define('SESION_DOMAIN', '/');
-	define('URL_BASE', $uri . 'base/');
+	define('URL_BASE', $uri);
 	define('PRODUCCION', false); # En Desarrollo, se establece en FALSE
 } else {
 	define('SESION_PATH', '/');
@@ -75,9 +75,9 @@ if ( PRODUCCION ) {
 	define('DB_USER', '');
 	define('DB_PASS', '');
 } else {
-	define('DB_NAME', 'base');
-	define('DB_USER', 'root');
-	define('DB_PASS', 'root');
+	define('DB_NAME', DB_NAME_DEV);
+	define('DB_USER', DB_USER_DEV);
+	define('DB_PASS', DB_PASS_DEV);
 }
 define('DB_DSN', 'mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset='.DB_CHAR); # Si no se necesita BD asignar 'false'
 define('ACL', true); # Si no se necesita ACL asignar 'false'

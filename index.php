@@ -5,6 +5,7 @@ define('RUTA', realpath(dirname(__FILE__)) . DS);
 define('RUTA_CORE', RUTA . 'core' . DS);
 define('RUTA_VENDOR', RUTA . 'vendor' . DS);
 
+require_once(RUTA_CORE . 'dev.php');
 require_once(RUTA_CORE . 'configuracion.php');
 require_once(RUTA_VENDOR . 'autoload.php');
 

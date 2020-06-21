@@ -34,7 +34,7 @@
 }
 .navbar-nav>.user-menu>.dropdown-menu>li.user-header>img {
     border-color: transparent;
-    border-color: none;
+    height: auto;
 }
 .navbar-nav>.user-menu>.dropdown-menu>li.user-header>p {
     font-size: smaller;

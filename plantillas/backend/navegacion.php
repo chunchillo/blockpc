@@ -24,10 +24,10 @@ function getMenus(int $sudo = 0) {
         'titulo' => '<i class="fa fa-users mr-1"></i> <span>Usuarios</span>',
         'enlace' => '#',
         'submenus' => [
-            'Usuarios' => URL_BASE . 'usuarios/activos',
-            'Permisos' => URL_BASE . 'usuarios/permisos/listar',
-            'Roles' => URL_BASE . 'usuarios/roles/listar',
-            'ACL' => URL_BASE . 'usuarios/acl/control',
+            '<i class="fa fa-users mr-1"></i> Usuarios' => URL_BASE . 'usuarios/activos',
+            '<i class="fa fa-cog mr-1"></i> Permisos' => URL_BASE . 'usuarios/permisos/listar',
+            '<i class="fa fa-cog mr-1"></i> Roles' => URL_BASE . 'usuarios/roles/listar',
+            '<i class="fa fa-cogs mr-1"></i> ACL' => URL_BASE . 'usuarios/acl/control',
         ]
     );
 	

@@ -45,6 +45,10 @@ final class nuevoControlador extends Controlador
             $error = $this->cargarHTML('error', array('error' => $e->getMessage()), $this->_plantilla);
             $this->_vista->asignar('error', $error);
         }
+        $this->_vista->setURL([
+			$this->cargarUrl("assets/dev/faker.js"),
+			$this->cargarUrl("assets/dev/ruts.js")
+		], 'js');
         $this->_vista->setJS(['nuevo']);
         $this->cargarPagina($this->_vista->renderizar("nuevo", "usuarios", $this->_plantilla));
     }
@@ -189,14 +193,13 @@ final class nuevoControlador extends Controlador
         $usuario = $this->_modelo->usuario($idNuevo);
         $datos = "";
         foreach ( $usuario as $clave => $valor ) {
-            //$valor = ( $clave === "role" ) ? $this->_modelo->getRol($valor) : $valor;
             $datos .= "<b>" . ucwords($clave) ."</b>: {$valor}<br>";
         }
         $correo = $this->cargarLibreria('Correo');
 		$correo->setFrom(CORREO_CONTACTO, NOMBRE_CONTACTO);
         $web = WEB_NAME;
         
-        $url = URL_BASE . "usuarios/activar/{$idNuevo}/{$codigo}";
+        $url = URL_BASE . "sistema/activar/{$idNuevo}/{$codigo}";
         $fecha = $this->_funciones->fecha($usuario->creado);
         $mensaje = "<p>Saludos <b>{$usuario->nombre}</b></p>";
         $mensaje .= "Enviaste una solicitud de usuario a <b>{$web}</b>, con fecha de {$fecha}<br>";
@@ -229,7 +232,6 @@ final class nuevoControlador extends Controlador
 				exit;
 			}
 		}
-        return true;
     }
 
     private function roles(int $idRole = 0): string

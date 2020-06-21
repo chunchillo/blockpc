@@ -7,17 +7,17 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 --
--- Base de datos, `base`
+-- Base de datos, `local_colegio`
 --
-CREATE DATABASE IF NOT EXISTS `base` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `base`;
+CREATE DATABASE IF NOT EXISTS `local_colegio` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `local_colegio`;
 
 --
 -- Estructura de tabla para la tabla `permisos`
 --
 DROP TABLE IF EXISTS `permisos`;
 CREATE TABLE IF NOT EXISTS `permisos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `permiso` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `llave` varchar(38) COLLATE utf8mb4_unicode_ci NOT NULL,
   `descripcion` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
 --
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `role` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `descripcion` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
   `editable` tinyint(1) NOT NULL DEFAULT '1',
@@ -42,17 +42,17 @@ CREATE TABLE IF NOT EXISTS `roles` (
 --
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `email` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `clave` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` int(11) NOT NULL,
+  `role` int NOT NULL,
   `codigo` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `activado` tinyint(1) DEFAULT 0,,
   `enlinea` tinyint(1) DEFAULT 0,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` TIMESTAMP DEFAULT NULL,
-  `user_id` int(11) DEFAULT 0,
+  `updated_at` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` TIMESTAMP NULL,
+  `user_id` int DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 DROP TABLE IF EXISTS `perfiles`;
 CREATE TABLE IF NOT EXISTS `perfiles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `alias` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nombre` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `apellido` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -69,12 +69,12 @@ CREATE TABLE IF NOT EXISTS `perfiles` (
   `telefono` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `celular` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `direccion` TEXT COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `region` int(11) DEFAULT 0,
-  `provincia` int(11) DEFAULT 0,
-  `comuna` int(11) DEFAULT 0,
+  `region` int DEFAULT 0,
+  `provincia` int DEFAULT 0,
+  `comuna` int DEFAULT 0,
   `resumen` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
   `imagen` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_id` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -83,8 +83,8 @@ CREATE TABLE IF NOT EXISTS `perfiles` (
 --
 DROP TABLE IF EXISTS `permiso_role`;
 CREATE TABLE IF NOT EXISTS `permiso_role` (
-  `idRole` int(11) NOT NULL,
-  `idPermiso` int(11) NOT NULL,
+  `idRole` int NOT NULL,
+  `idPermiso` int NOT NULL,
   `valor` tinyint(4) NOT NULL,
   UNIQUE KEY `role` (`idRole`,`idPermiso`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -94,8 +94,8 @@ CREATE TABLE IF NOT EXISTS `permiso_role` (
 --
 DROP TABLE IF EXISTS `permiso_usuario`;
 CREATE TABLE IF NOT EXISTS `permiso_usuario` (
-  `idUsuario` int(11) NOT NULL,
-  `idPermiso` int(11) NOT NULL,
+  `idUsuario` int NOT NULL,
+  `idPermiso` int NOT NULL,
   `valor` tinyint(4) NOT NULL,
   UNIQUE KEY `permiso` (`idUsuario`,`idPermiso`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

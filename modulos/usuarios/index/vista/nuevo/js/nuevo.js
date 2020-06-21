@@ -65,3 +65,32 @@ provincia.addEventListener('change', async function() {
         console.log(error)
     }
 });
+
+function fakeUser () {
+
+    // make name contextual to username and email
+    let nombre = faker.name.firstName();
+    let first = nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase();
+    let apellido = faker.name.lastName();
+    let last = apellido.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase();
+    let alias = first;
+    let correo = `${first}.${last}@mail.com`;
+    let direccion = faker.address.streetAddress();
+    let telefono = faker.phone.phoneNumber().replace(/\D/g, "");
+    let clave = '123456';
+    let rut = formatRut(generateRut(), RutFormat.DOTS_DASH);
+
+    $("#alias").val(alias);
+    $("#email").val(correo);
+    $("#clave").val(clave);
+    $("#repetir").val(clave);
+    $("#nombre").val(nombre);
+    $("#apellido").val(apellido);
+    $("#rut").val(rut);
+    $("#direccion").val(direccion);
+    $("#celular").val(telefono);
+};
+
+$('#fakeUser').click(function(){
+    fakeUser();
+});
